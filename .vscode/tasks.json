@@ -1,0 +1,58 @@
+//Funciona quando os arquivos estão em pastas diferentes
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++ Compile Project",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-c",
+                "-I",
+                "Project/include",
+                "Project/src/main.cpp",
+                "-o",
+                "Project/build/main.o",
+                ";",
+                "g++",
+                "-c",
+                "-I",
+                "Project/include",
+                "Project/src/Ballistics.cpp",
+                "-o",
+                "Project/build/Ballistics.o",
+                ";",
+                "g++",
+                "Project/build/main.o",
+                "Project/build/Ballistics.o",
+                "-o",
+                "Project/executable/testFile"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "C++ Excecute Project",
+            "type": "shell",
+            "command": "Project/executable/testFile",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "C++ Debugge Project",
+            "type": "shell",
+            "command": "gdb Project/executable/testFile",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
