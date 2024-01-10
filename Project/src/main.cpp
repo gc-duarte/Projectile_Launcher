@@ -22,6 +22,8 @@ const void initialize(std::vector<double> &values){
 
 int main(){
     
+    std::cout << "\n------------ // ------------\n\n";
+    
     std::vector<double> values;
     values.resize(3);
     initialize(values);
@@ -30,24 +32,6 @@ int main(){
     T1.calculateMaxDistance();
     T1.calculateMaxHeight();
     T1.print();
-
-    std::cout << "\n------------ // ------------\n\n";
-
-    initialize(values);
-    Ballistics T2(values.at(0),values.at(1),values.at(2));
-    T2.calculateFlightTime();
-    T2.calculateMaxDistance();
-    T2.calculateMaxHeight();
-    T2.print();
-
-    std::cout << "\n------------ // ------------\n\n";
-    
-    initialize(values);
-    Ballistics T3(values.at(0),values.at(1),values.at(2));
-    T3.calculateFlightTime();
-    T3.calculateMaxDistance();
-    T3.calculateMaxHeight();
-    T3.print();
     
     std::cout << "\n------------ // ------------\n\n";
     
