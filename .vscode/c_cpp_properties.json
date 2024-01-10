@@ -4,7 +4,7 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/branchStaging/include"
+                "${workspaceFolder}/Project/include"
             ],
             "defines": [
                 "_DEBUG",

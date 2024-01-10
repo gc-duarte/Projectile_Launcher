@@ -37,7 +37,7 @@
         {
             "label": "C++ Excecute Project",
             "type": "shell",
-            "command": "Project/executable/testFile 3",
+            "command": "Project/executable/testFile",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
