@@ -32,4 +32,6 @@ public:
 
 };
 
+const void initialize(std::vector<double> &values);
+
 #endif
