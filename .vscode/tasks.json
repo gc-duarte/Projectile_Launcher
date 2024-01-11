@@ -7,6 +7,7 @@
             "type": "shell",
             "command": "g++",
             "args": [
+                "-g",
                 "-c",
                 "-I",
                 "Project/include",
@@ -15,6 +16,7 @@
                 "Project/build/main.o",
                 ";",
                 "g++",
+                "-g",
                 "-c",
                 "-I",
                 "Project/include",
@@ -23,6 +25,7 @@
                 "Project/build/Ballistics.o",
                 ";",
                 "g++",
+                "-g",
                 "Project/build/main.o",
                 "Project/build/Ballistics.o",
                 "-o",
