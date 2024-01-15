@@ -1,25 +1,29 @@
 #ifndef BALLISTICS_HPP
 #define BALLISTICS_HPP
 
-#include "Definitions.hpp"
+#include "Exceptions.hpp"
 
 class Ballistics{
 private:
-    gravity g = 9.81;           // (m/s²)
-    distance dMax;              // (m)
-    velocity v0;                // (m/s)
-    height hMax;                // (m)
-    angle teta;                 // (degrees)
-    height h0;                  // (m)
-    time tmax;                  // (sec)
+    const double g = 9.81;                         // (m/s²)
+    std::vector<double> values;                   // v0, teta, h0
+    double dMax;                                 // (m)
+    double v0;                                  // (m/s)
+    double hMax;                               // (m)
+    double teta;                              // (degrees)
+    double h0;                               // (m)
+    double tmax;                            // (sec)
 
 public:
-    Ballistics(velocity v0, angle teta, height h0);
+    Ballistics(double v0, double teta, double h0);
     ~Ballistics();
+    
     void calculateMaxDistance();
     void calculateFlightTime();
     void calculateMaxHeight();
-    void print() const;
+    std::vector<double> getvalues() const;
+
+    void print(std::vector<double> values);
 
 };
 

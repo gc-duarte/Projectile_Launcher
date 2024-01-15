@@ -1,0 +1,4 @@
+Things to add and change:
+
+-> Fix the initialize function and the way it prints
+-> Rewrite the types
