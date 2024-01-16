@@ -6,18 +6,18 @@ int main(){
     Launchers L;
     std::string command;
     std::cout << "In order to start the program, type \"begin\": ";
+    std::vector<double> values(3,0);
     std::getline(std::cin, command);
     while(command == "begin"){
 
         system("cls");
-        std::cout << "Which command?\n-> launch\n-> end\n\n--->";
+        std::cout << "Which command?\n-> launch\n-> end\n\n---> ";
         do{
             
             std::cin >> command;
             if(command == "launch"){
                 
                 system("cls");
-                std::vector<double> values(3);
                 initialize(values);
                 Ballistics B(values[0],values[1],values[2]);
                 B.calculateFlightTime();
@@ -37,14 +37,14 @@ int main(){
             
             if(command != "end"){
                 
-                std::cout << "Which command?\n-> launch\n-> end\n\n--->";
+                std::cout << "Which command?\n-> launch\n-> end\n\n---> ";
             }
 
         }while(command != "end");
     }
 
     L.printlaunchers();
-    std::cout << "\n\n--> Number of launchers: " << L.getnumlaunchers() << "\n\n";
+    std::cout << "--> Number of launchers: " << L.getnumlaunchers() << "\n\n";
     std::cout << "\n# ";
     system("pause");
 }

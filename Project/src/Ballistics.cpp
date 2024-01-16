@@ -1,7 +1,14 @@
 #include "Ballistics.hpp"
 
-Ballistics::Ballistics(double v0, double teta, double h0):
-v0(v0), teta((teta*M_PI)/180.00), h0(h0) {}
+Ballistics::Ballistics(double v0, double teta, double h0){
+
+    this->v0 = v0;
+    this->values.push_back(v0);
+    this->teta = teta;
+    this->values.push_back(teta);
+    this->h0 = h0;
+    this->values.push_back(h0);
+}
 
 Ballistics::~Ballistics(){
 
@@ -9,33 +16,36 @@ Ballistics::~Ballistics(){
 
 void Ballistics::calculateFlightTime(){
     
-    this->tmax = ((this->v0*sin(this->teta)) +
-    sqrt(pow(this->v0*sin(this->teta),2)+2*this->g*this->h0))/this->g;
+    double aux = (this->teta*M_PI)/180.00;
+    this->tmax = ((this->v0*sin(aux)) +
+    sqrt(pow(this->v0*sin(aux),2)+2*this->g*this->h0))/this->g;
 }
 
 void Ballistics::calculateMaxDistance(){
- 
-    this->dMax = (pow(this->v0,2)*sin(2*this->teta))/this->g;
+    
+    double aux = (this->teta*M_PI)/180.00;
+    this->dMax = (pow(this->v0,2)*sin(2*aux))/this->g;
 }
     
 void Ballistics::calculateMaxHeight(){
 
-    this->hMax = this->h0 + (pow(v0*sin(this->teta),2))/(this->g*2);
+    double aux = (this->teta*M_PI)/180.00;
+    this->hMax = this->h0 + (pow(v0*sin(aux),2))/(this->g*2);
 }
 
-std::vector<double> Ballistics::getvalues() const{
+std::vector<double> Ballistics::getvalues(){
     return this->values;
 }
 
 void Ballistics::print(std::vector<double> values){
     
-    std::cout << "Initial velocity(m/s): " << values[0] << ".\n";
-    std::cout << "Angle of launch(degrees): " << values[1] << ".\n";
-    std::cout << "Initial height(m): " << values[2] << ".\n";
+    std::cout << "Initial velocity(m/s): " << std::fixed << std::setprecision(2) << values[0] << ".\n";
+    std::cout << "Angle of launch(degrees): " << std::fixed << std::setprecision(2) << values[1] << ".\n";
+    std::cout << "Initial height(m): " << std::fixed << std::setprecision(2) << values[2] << ".\n";
     std::cout << '\n';
-    std::cout << "Time of flight(sec): " << this->tmax << '\n';
-    std::cout << "Maximum distance(m): " << this->dMax << '\n';
-    std::cout << "Maximum height(m): " << this->hMax << '\n';
+    std::cout << "Time of flight(sec): " << std::fixed << std::setprecision(2) << this->tmax << '\n';
+    std::cout << "Maximum distance(m): " << std::fixed << std::setprecision(2) << this->dMax << '\n';
+    std::cout << "Maximum height(m): " << std::fixed << std::setprecision(2) << this->hMax << '\n';
 }
 
 void initialize(std::vector<double> &values){

@@ -1,6 +1,6 @@
 #include "Launchers.hpp"
 
-void Launchers::insertlaunchers(Ballistics &launcher){
+void Launchers::insertlaunchers(Ballistics launcher){
 
     this->launchers.push_back(launcher);
     this->numlaunchers += 1;

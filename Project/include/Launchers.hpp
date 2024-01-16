@@ -9,7 +9,7 @@ private:
     std::size_t numlaunchers = 0;
 
 public:
-    void insertlaunchers(Ballistics &launcher);
+    void insertlaunchers(Ballistics launcher);
     std::size_t getnumlaunchers() const;
     void printlaunchers();
 

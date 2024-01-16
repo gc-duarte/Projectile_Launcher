@@ -21,7 +21,7 @@ public:
     void calculateMaxDistance();
     void calculateFlightTime();
     void calculateMaxHeight();
-    std::vector<double> getvalues() const;
+    std::vector<double> getvalues();
 
     void print(std::vector<double> values);
 
